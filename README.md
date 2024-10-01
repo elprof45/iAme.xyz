@@ -1,6 +1,3 @@
-
----
-
 # Research Assistant - Knowledge Base
 
 Ce projet est une application Streamlit qui sert d'assistant de recherche intelligent, utilisant **ChromaDB** pour gérer une base de connaissances et **Groq AI** pour générer des réponses en fonction des requêtes de l'utilisateur.
@@ -66,5 +63,3 @@ pip install -r requirements.txt
 ## Usage
 
 Une fois l'application lancée, vous pouvez interagir avec l'assistant de recherche via l'interface Streamlit. Sélectionnez un modèle et un sujet d'intérêt, puis posez des questions à l'assistant.
-
----
