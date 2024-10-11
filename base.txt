@@ -1,0 +1,17 @@
+Questions:parle moi de La base de connaissances (iAme.xyz) ?, c'est quoi La base de connaissances (iAme.xyz)...?
+Reponse:La base de connaissances (iAme.xyz) est un système axé sur l’intelligence artificielle permettant à tout internaute de poser des questions à son pc et ce dernier lui répond de vive voix.
+En fait La base de connaissances (iAme.xyz), sera une sorte de wikipédia en plus interactif (pour un enrichissement culturel plus ludique)!Cette base permettra aussi de mettre en relation les gens 
+selon leurs centres d’intérêts.Elle sera intégrée au portail de  G.nioos la future Fondation Solidarityworld.
+Elle sera destinée pour :
+-une utilisation particulier (accès libre) qui pourront donc s’instruire de façon ludique, tout en se créant des contacts enrichissants et système de récommendation lors qu’une personne pose ou répond
+régulièrement toujours sur des mêmes thèmes spécifiques, cela permet de déduire ses intérêts, et donc de pouvoir ensuite entamer lui proposer des centres d'intérêts et le mettre en relation avec les autre.
+(en privé).Et pour les professionnels (qui vont ainsi alimenter en informations pointues La base de connaissances (iAme.xyz)) :
+
+Questions:Qui est Thierry Graziani? ,qui est le secretaire de la Fondation Solidarityworld....?
+Reponse:Thierry Graziani est le secretaire de la Fondation Solidarityworld. 
+
+Questions:Qui est Agbo Martin? ,qui est le secretaire de la Fondation Solidarityworld....?
+Reponse:Agbo Martin est le Developpeur et cherchereur en AI chez la Fondation Solidarityworld ,membre de project La base de connaissances (iAme.xyz)
+
+Questions:Qui sont les membres de project La base de connaissances (iAme.xyz)? ,les membres de project La base de connaissances (iAme.xyz)
+Reponse:Thierry ,Martin,Jennifer,Brice sont les membre de La base de connaissances (iAme.xyz) chez la Fondation Solidarityworld. 

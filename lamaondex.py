@@ -1,19 +1,7 @@
-import chromadb
 import streamlit as st
-from chromadb.utils import embedding_functions
 
 from assistant import get_research_assistant, topics_listes
 
-# Définir la fonction d'embedding par défaut
-embedding_function = embedding_functions.DefaultEmbeddingFunction()
-
-# Initialiser le client ChromaDB avec une base de données persistante
-chroma_client = chromadb.PersistentClient(path="./chroma_db")
-
-# Récupérer ou créer une collection de documents dans la base de connaissances
-knowledge_base_collection = chroma_client.get_or_create_collection(
-    "base1", embedding_function=embedding_function
-)
 
 # Configuration de la page Streamlit
 st.set_page_config(
@@ -41,19 +29,16 @@ elif st.session_state["llm_model"] != llm_model:
 
 
 # Fonction pour récupérer les documents pertinents de la base de connaissances
-def retrieve_relevant_documents(prompt):
-    query_result = knowledge_base_collection.query(
-        query_texts=[prompt], n_results=3, include=["documents"]
-    )
-    context = ""
-    for doc in query_result["documents"][0]:
-        context += doc
+def retrieve_relevant_context():
+    with open("base.txt" , "r",encoding="utf8") as base:
+        context = base.read()
     return context
 
 
 # Fonction pour générer une réponse basée sur la requête de l'utilisateur
 def generate_response(prompt):
-    context = retrieve_relevant_documents(prompt)
+    context = retrieve_relevant_context()
+    
     research_assistant = get_research_assistant(model=llm_model, context=context)
 
     # Ajouter la requête de l'utilisateur dans les messages de session

@@ -1,14 +1,14 @@
 import os
-
 from dotenv import load_dotenv
 from phi.assistant import Assistant
 from phi.llm.groq import Groq
+import streamlit as st
 
 # Charger les variables d'environnement depuis un fichier .env
 load_dotenv()
 
 # Récupérer l'API key Groq depuis l'environnement
-os.getenv("GROQ_API_KEY")
+os.environ["GROQ_API_KEY"]=st.secrets["GROQ_API_KEY"]
 
 
 def get_research_assistant(
@@ -16,11 +16,13 @@ def get_research_assistant(
     model: str = "llama3-8b-8192",
     debug_mode: bool = True,
 ) -> Assistant:
+    print(model)
     return Assistant(
         name="groq_research_assistant",
-        llm=Groq(model="mixtral-8x7b-32768"),
-        description=f"""Vous êtes un assistant intelligent spécialisé dans la réponse à des questions. 
-        Votre rôle est de fournir des réponses courtes (max 300 mots), précises et concises en vous basant sur le contexte fourni.
+        llm=Groq(model=model),
+        description=f"""
+        Vous êtes La base de connaissances (iAme.xyz) un assistant intelligent spécialisé dans la réponse à des questions.
+        Votre rôle est de fournir des réponses courtes (300 mots), précises et concises en vous basant sur le contexte fourni.
         ## Contexte : {context}""",
         instructions=[
             "Lorsque l'utilisateur pose une question, commencez par vérifier si la réponse se trouve dans le contexte :",
@@ -30,18 +32,15 @@ def get_research_assistant(
             "If you need to reference the chat history, use the `get_chat_history` tool.",
             "If the users question is unclear, ask clarifying questions to get more information.",
             "Carefully read the information you have gathered and provide a clear and concise answer to the user.",
-            "Do not use phrases like 'based on my knowledge' or 'depending on the information'.",
+            "Do not use phrases like 'based on my knowledge or context' or 'depending on the information'.",
         ],
         # Show tool calls in the chat
         markdown=True,
         add_datetime_to_instructions=True,
+        add_chat_history_to_messages=True,
+        # This setting adds 4 previous messages from chat history to the messages
+        num_history_messages=4,
         debug_mode=debug_mode,
-        # This setting gives the LLM a tool to get chat history
-        # read_chat_history=True,
-        # This setting adds 6 previous messages from chat history to the messages sent to the LLM
-        # num_history_messages=4,
-        # Adds chat history to messages
-        # add_chat_history_to_messages=True,
     )
 
 
