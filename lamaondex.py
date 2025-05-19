@@ -15,7 +15,7 @@ st.markdown("## Base de Connaissances alimentée par SolidaryWord")
 
 # Sélectionner le modèle de LLM via la barre latérale
 llm_model = st.sidebar.selectbox(
-    "Sélectionner un Modèle", options=["llama3-70b-8192", "llama3-8b-8192", "qwen-qwq-32b","deepseek-r1-distill-llama-70b"]
+    "Sélectionner un Modèle", options=["llama3-70b-8192", "llama3-8b-8192"]
 )
 
 # Vérifier si le modèle sélectionné est déjà dans l'état de session, sinon l'ajouter
